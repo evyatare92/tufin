@@ -5,7 +5,8 @@ from pathlib import Path
 
 def validate_file(file_path):
     if not os.path.isfile(file_path):
-        raise FileNotFoundError(f"File {file_path} does not exists")
+        #raise FileNotFoundError(f"File {file_path} does not exists")
+        print(f"File {file_path} does not exists")
 
 def create_zip_file(source_file_path):
     zip_file_name = f"{Path(source_file_path).stem}_{os.environ['VERSION']}.zip"
