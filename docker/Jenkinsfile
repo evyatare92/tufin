@@ -4,7 +4,8 @@ containerTemplate(name: 'python', image: 'python:3-alpine', ttyEnabled: true, co
 ]) {
     node(label) {
         stage('Run python') {
-            sh 'python docker/zip_job.py'
+            //sh 'python docker/zip_job.py'
+            sh 'ls .'
         }
     }
 }
