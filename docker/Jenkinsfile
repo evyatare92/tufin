@@ -1,12 +1,13 @@
 def label = "python"
 podTemplate(label: label, containers: [
-containerTemplate(name: 'python', image: 'python:3-alpine', ttyEnabled: true, command: 'cat', resourceLimitCpu: '500m', resourceLimitMemory: '512Mi'),
+containerTemplate(name: 'python', image: 'python:3-alpine', ttyEnabled: true, command: 'cat'),
 ]) {
     node(label) {
         stage('Run python') {
             //sh 'python docker/zip_job.py'
             git changelog: false, poll: false, url: 'https://github.com/evyatare92/tufin.git'
             sh 'ls'
+            sh 'python docker/zip_job.py'
             //sh 'cd tufin'
             
         }
