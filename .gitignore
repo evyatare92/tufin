@@ -1,3 +1,4 @@
 .gradle
 grdl/build
+grdl/build/**
 .vscode
