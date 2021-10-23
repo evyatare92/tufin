@@ -1,0 +1,5 @@
+apply plugin: 'java'
+task runJava(type: JavaExec) {
+    main = 'gradle.tests.Program'
+    classpath = sourceSets.main.runtimeClasspath
+}
