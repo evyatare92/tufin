@@ -1,0 +1,10 @@
+def label = "python"
+podTemplate(label: label, containers: [
+containerTemplate(name: 'python', image: 'python:3-alpine', ttyEnabled: true, command: 'cat'),
+]) {
+    node(label) {
+        stage('Run python') {
+            sh 'python docker/zip_job.py'
+        }
+    }
+}
