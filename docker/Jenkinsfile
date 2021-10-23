@@ -1,6 +1,6 @@
 def label = "python"
 podTemplate(label: label, containers: [
-containerTemplate(name: 'python', image: 'python:3-alpine', ttyEnabled: true, command: 'cat'),
+containerTemplate(name: 'python', image: 'python:3-alpine', ttyEnabled: true, command: 'cat', envVars: [envVar(key: 'VERSION', value: '1.0.0')]),
 ]) {
     node(label) {
         stage('Run python') {
