@@ -6,8 +6,8 @@ containerTemplate(name: 'python', image: 'python:3-alpine', ttyEnabled: true, co
         stage('Run python') {
             //sh 'python docker/zip_job.py'
             git changelog: false, poll: false, url: 'https://github.com/evyatare92/tufin.git'
-            sh 'ls'
-            sh 'python3 docker/zip_job.py'
+            sh 'python --version'
+            sh 'python docker/zip_job.py'
             //sh 'cd tufin'
             
         }
